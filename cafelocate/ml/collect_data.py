@@ -8,14 +8,10 @@ import pandas as pd
 import time
 import os
 import json
-from dotenv import load_dotenv
-
-# Load environment variables
-load_dotenv()
 
 # Mapbox configuration
-MAPBOX_TOKEN = os.getenv('MAPBOX_ACCESS_TOKEN')
-if not MAPBOX_TOKEN or MAPBOX_TOKEN == 'your_mapbox_access_token_here':
+MAPBOX_TOKEN = 'pk.eyJ1IjoibHV2LWt1c2h3YWhhIiwiYSI6ImNtbHczY2FsOTBlZHkzZXNieG1pN3N4a2cifQ.547nxkwx-7bAfPozR08ENQ'
+if not MAPBOX_TOKEN:
     print("Warning: MAPBOX_ACCESS_TOKEN not set. Skipping Mapbox data collection.")
     MAPBOX_TOKEN = None
 
