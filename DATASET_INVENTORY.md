@@ -1,7 +1,7 @@
 # 📊 CafeLocate Dataset Inventory
 
 ## Quick Summary
-✅ Successfully collected **1,072 café locations** for Kathmandu using the Mapbox API key embedded in your code.
+✅ Successfully collected **1,072 cafe locations** for Kathmandu using the Mapbox API key embedded in your code.
 
 ---
 
@@ -14,7 +14,7 @@
 
 | Property | Value |
 |----------|-------|
-| Records | **1,072 cafés** |
+| Records | **1,072 cafes** |
 | Columns | 10 |
 | File Size | 89.3 KB |
 | Data Source | OpenStreetMap (Overpass API) + Mapbox Geocoding |
@@ -22,7 +22,7 @@
 **Columns:**
 ```
 - place_id: Unique identifier (e.g., osm_432195183)
-- name: Café name
+- name: Cafe name
 - lat: Latitude
 - lng: Longitude
 - type: amenity type (cafe)
@@ -33,7 +33,7 @@
 - source: openstreetmap (1,072 records)
 ```
 
-**Sample Cafés:**
+**Sample Cafes:**
 | Name | Location | Source |
 |------|----------|--------|
 | Hermann Helmers Bakery | 27.6783°N, 85.3126°E | OSM |
@@ -95,7 +95,7 @@ Complete list of all amenities in Kathmandu from OpenStreetMap
 | Records | **9,265 amenities** |
 | Columns | 5 |
 | File Size | 625.8 KB |
-| Coverage | Schools, hospitals, cafés, shops, restaurants, etc. |
+| Coverage | Schools, hospitals, cafes, shops, restaurants, etc. |
 
 **Columns:**
 ```
@@ -107,7 +107,7 @@ Complete list of all amenities in Kathmandu from OpenStreetMap
 ```
 
 **Amenity Types:**
-- Cafés, restaurants, bars
+- Cafes, restaurants, bars
 - Schools, colleges
 - Hospitals, clinics
 - Bus stops, parking
@@ -199,10 +199,10 @@ pk.eyJ1IjoibHV2LWt1c2h3YWhhIiwiYSI6ImNtbHczY2FsOTBlZHkzZXNieG1pN3N4a2cifQ.547nxk
 **Location:** `cafelocate/ml/collect_data.py` (line 12)
 
 ### Collection Process:
-1. **OpenStreetMap (Primary)** - 1,101 cafés via Overpass API
+1. **OpenStreetMap (Primary)** - 1,101 cafes via Overpass API
 2. **Mapbox Geocoding (Supplementary)** - Attempted to get additional data
 3. **Deduplication** - Removed duplicates within 50m radius
-4. **Final Count** - 1,072 unique café locations
+4. **Final Count** - 1,072 unique cafe locations
 
 ### Collection Script:
 ```bash
@@ -222,10 +222,10 @@ This script:
 
 | Metric | Value |
 |--------|-------|
-| Total Cafés Identified | 1,072 |
+| Total Cafes Identified | 1,072 |
 | Geographic Coverage | 85.20-85.45°E, 27.60-27.80°N |
-| Average Café Density | **13.08 per km²** |
-| Cafés with Ratings | 0 (100% NULL) |
+| Average Cafe Density | **13.08 per km²** |
+| Cafes with Ratings | 0 (100% NULL) |
 | Data Freshness | Real-time (from OSM) |
 | Cost | **FREE** (OpenStreetMap + Mapbox free tier) |
 
@@ -235,7 +235,7 @@ This script:
 
 | Issue | Impact | Solution |
 |-------|--------|----------|
-| No café ratings | Can't assess quality | Use TripAdvisor/Yelp API (see RATINGS_WITHOUT_GOOGLE_API.md) |
+| No cafe ratings | Can't assess quality | Use TripAdvisor/Yelp API (see RATINGS_WITHOUT_GOOGLE_API.md) |
 | No review counts | Missing social proof | Enhance with TripAdvisor data |
 | OSM data sparse in rural areas | Incomplete coverage | Add user-contributed data |
 | Ratings all NULL | Can't train with ratings | Collect ratings from alternative sources |
@@ -246,10 +246,10 @@ This script:
 
 ### Option 1: Use Current Data (Ready Now)
 ```python
-# Import café locations
+# Import cafe locations
 import pandas as pd
 df = pd.read_csv('cafelocate/data/kathmandu_cafes.csv')
-print(f"Loaded {len(df)} cafés for analysis")
+print(f"Loaded {len(df)} cafes for analysis")
 ```
 
 ### Option 2: Enhance with Ratings (Recommended)
@@ -298,16 +298,16 @@ MP/
 ## 💡 Key Insights
 
 ✅ **You already have:**
-- 1,072 café locations with exact coordinates
+- 1,072 cafe locations with exact coordinates
 - 9,265 amenities for neighbor analysis
 - 32 ward boundaries with census data
 - 16,805 road segments for accessibility
 - Trained ML model (100% accurate)
 
 ⚠️ **You're missing:**
-- Café ratings/reviews (not in OpenStreetMap, but available from TripAdvisor/Yelp)
+- Cafe ratings/reviews (not in OpenStreetMap, but available from TripAdvisor/Yelp)
 - User-generated reviews
-- Real-time café status
+- Real-time cafe status
 
 🎯 **What this enables:**
 - Location suitability analysis (what we trained)

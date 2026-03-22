@@ -1,6 +1,6 @@
 """
 CafeLocate ML - Data Collection Script
-Scrapes café data from Mapbox Geocoding API and OpenStreetMap
+Scrapes cafe data from Mapbox Geocoding API and OpenStreetMap
 """
 
 import requests
@@ -71,7 +71,7 @@ def search_cafes_mapbox(lng, lat, radius=1000):
 
 def get_osm_cafes():
     """
-    Get café data from OpenStreetMap using Overpass API
+    Get cafe data from OpenStreetMap using Overpass API
     This provides more comprehensive local data
     """
     overpass_url = "http://overpass-api.de/api/interpreter"
@@ -97,7 +97,7 @@ def get_osm_cafes():
 
 def parse_osm_cafes(osm_data):
     """
-    Parse OpenStreetMap café data into standardized format
+    Parse OpenStreetMap cafe data into standardized format
     """
     cafes = []
 
@@ -138,14 +138,14 @@ def parse_osm_cafes(osm_data):
 
 def collect_cafe_data():
     """
-    Main function to collect café data from multiple sources
+    Main function to collect cafe data from multiple sources
     """
-    print("Starting café data collection...")
+    print("Starting cafe data collection...")
 
     all_cafes = []
 
     # 1. Get data from OpenStreetMap (primary source)
-    print("Fetching café data from OpenStreetMap...")
+    print("Fetching cafe data from OpenStreetMap...")
     osm_data = get_osm_cafes()
     print(f"OSM data received: {osm_data is not None}")
     if osm_data:
@@ -198,7 +198,7 @@ def collect_cafe_data():
     # Remove duplicates based on coordinates (within 50m)
     print("Removing duplicates...")
     if not all_cafes:
-        print("No café data collected from any source")
+        print("No cafe data collected from any source")
         df_deduped = pd.DataFrame()
     else:
         df = pd.DataFrame(all_cafes)
